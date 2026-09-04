@@ -1,0 +1,20 @@
+{
+  "name": "surf_check_app",
+  "version": "1.0.0",
+  "description": "an app that allows users to see the surf report as well as update it and comment on it",
+  "homepage": "https://github.com/tslmusic2/surf_check_app#readme",
+  "bugs": {
+    "url": "https://github.com/tslmusic2/surf_check_app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tslmusic2/surf_check_app.git"
+  },
+  "license": "ISC",
+  "author": "tslmusic2",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
