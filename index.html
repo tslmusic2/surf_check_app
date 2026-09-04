@@ -20,36 +20,36 @@
 
                         <section class="surf-spot-pawleys-island">
 
-                                <div class="surf-report" data-id="1">
+                                <img class="img surf-spot-img" src="images/surf-pi-wave.jpg">
 
-                                        <img class="img surf-spot-img" src="images/surf-pi-wave.jpg">
+                                <div class="surf-report" data-id="1">
                                 
                                         <h1 class="surf-spot-name">Pawleys Island Pier</h1>
                                         <p class="surf-spot-Location">Pawleys Island, SC  USA</p>
 
                                         <p class="user-surf-stat" id="user-surf-stat-height">Surf Height: 3ft</p>
-                                        <p class="user-surf-stat" id="user-surf-stat-wind">Condition: Fair</p>
+                                        <p class="user-surf-stat" id="user-surf-stat-condition">Condition: Fair</p>
                                         <p class="user-surf-stat" id="user-surf-stat-crowd">Crowd: light</p>
 
                                         
 
                                         <button class="btn btn-add-user-report" id="btn-add-user-report">Add User Report</button>
 
-                                        <form class="update-form" action="#" method="POST" >
-                                                <label>
+                                        <form class="update-surf-stat-form" id="update-surf-stat-form" action="#" method="POST" >
+                                                <label class="surf-stat-form-surf-height-label">
                                                 Surf Height:
-                                                <input
+                                                <input  class="surf-stat-form-surf-height-input"
                                                         type="number"
-                                                        name="waveHeight"
+                                                        name="surfHeight"
                                                         min="0"
                                                         step="0.5"
                                                         value="3"
                                                 >
                                                 </label>
 
-                                                <label>
+                                                <label class="surf-stat-form-surf-condition-label">
                                                 Condition:
-                                                <select name="condition">
+                                                <select class="surf-stat-form-surf-condition-selector" name="condition">
                                                         <option value="clean">Clean</option>
                                                         <option value="fair">Fair</option>
                                                         <option value="choppy">Choppy</option>
@@ -57,41 +57,44 @@
                                                 </select>
                                                 </label>
 
-                                                <label>
+                                                <label class="surf-stat-form-surf-crowd-label">
                                                 Crowd:
-                                                <select name="crowd">
+                                                <select class="surf-stat-form-surf-crowd-selector" name="crowd">
                                                         <option value="light">Light</option>
                                                         <option value="medium" selected>Medium</option>
                                                         <option value="heavy">Heavy</option>
                                                 </select>
                                                 </label>
 
-                                                <button class="btn btn-add-update" id="btn-add-update" type="submit">Add Update</button>
+                                                <button class="btn btn-update-surf" id="btn-update-surf" type="submit">Update Surf</button>
                                         </form>
                                 </div>
 
 
                                 <div class="user-surf-comment-container" id="user-surf-comment-container">
 
-                                        <h3 class="user-surf-stat-comment">Comments</h3>
-                                        <p class="user-surf-stat-comment" id="user-surf-stat-comment">about as good as it gets for here.  nice sand bar just off the pier with good shape on a right</p>
+                                        <h3 class="user-surf-comment-header">Comments</h3>
+                                        <div class="user-surf-comment-string-box" id="user-surf-comment-string-box">
+                                                <p class="user-surf-comment-name">Johnathan</p>
+                                                <p class="user-surf-comment-message" id="user-surf-comment-message">about as good as it gets for here.  nice sand bar just off the pier with good shape on a right</p>
+                                        </div>
 
-
-                                        <form>
+                                        <form class="user-surf-comment-form" id="user-surf-comment-form">
                                                 <button class="btn btn-add-user-comment" id="btn-add-user-comment">Add Comment</button>
 
-                                                <label>
+                                                <label class="user-surf-comment-name-label">
                                                         Name:
-                                                        <input
+                                                        <input class="user-surf-comment-name-input"
                                                                 type="name"
                                                                 name="name"
                                                                 
                                                         >
                                                 </label>
 
-                                                <label>
+                                                <label class="user-surf-comment-textarea-label">
                                                         Comment:
-                                                        <textarea>
+                                                        <textarea class="user-surf-comment-textarea" type="name"
+                                                                name="comment">
 
                                                         </textarea>
                                                 </label>

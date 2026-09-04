@@ -10,8 +10,31 @@ body {
         font-family: "Quicksand", sans-serif;
 }
 
-h1, h2, h3 {
+
+h1, h3 {
         font-family: "Bebas Neue", sans-serif;
+        margin: 0;
+}
+
+h3 {
+        font-size: 1.5rem;
+}
+
+.surf-spot-Location {
+        margin: 0 0 2em 0;
+}
+
+.user-surf-stat {
+        margin: .25em;
+}
+
+.user-surf-comment-name,
+.user-surf-comment-message {
+        margin: 0;
+}
+
+.user-surf-comment-name {
+        font-weight: bold;;
 }
 
 img {
@@ -21,4 +44,55 @@ img {
 
 .btn {
         font-family: "Bebas Neue", sans-serif;
+        padding: .18em .5em;
+        font-size: .875rem;
+        
+}
+
+.btn-add-user-report,
+.btn-update-surf,
+.btn-add-user-comment {
+        align-self: start;
+}
+
+.btn-add-user-report {
+        margin-top: .75em;
+}
+
+
+
+/*====LAYOUT=====*/
+
+
+.surf-report,
+.user-surf-comment-container {
+      border: 2px solid black;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      margin: 3em; 
+      padding: 1em; 
+      background: linear-gradient(200deg, rgb(85, 201, 135), rgb(37, 151, 222));
+}
+
+.update-surf-form,
+.user-surf-comment-string-box {
+        border: 1px solid black;
+        margin-top: 1em;
+        padding: .5em;
+}
+
+.update-surf-stat-form {
+        border: 1px solid black;
+        padding: .5em;
+}
+
+/*----FORMS----*/
+
+.update-surf-stat-form,
+.user-surf-comment-form {
+        display: flex;
+        flex-direction: column;
+        gap: .75em;
+        margin-top: 1.5em; 
 }
