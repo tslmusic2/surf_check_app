@@ -1,7 +1,8 @@
 [
         {
         "id": 1,
-        "spot": "Garden City Pier",
+        "spot": "Pawleys Island Pier",
+        "location": "Pawleys Island, SC  USA",
         "waveHeight": 3,
         "condition": "clean",
         "crowd": "medium"
