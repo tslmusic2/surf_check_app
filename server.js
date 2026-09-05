@@ -3,12 +3,12 @@ import path from 'node:path'
 import fs from 'node:fs/promises'
 import { sendResponse } from './sendResponse.js'
 
-const PORT = 8000
+const PORT = 8001
 
 const __dirname = import.meta.dirname
 const surfDataPath = path.join(__dirname, 'data', './surfData.json')
 const userCommentsPath = path.join(__dirname, 'data', './userComments.json')
-     console.log(pathName)
+
 
 const server = http.createServer(async (req, res) => {
         //-------Added to work on my local network due to different front/backend ports
@@ -23,6 +23,36 @@ const server = http.createServer(async (req, res) => {
         }
 
 
+
+        if (req.url === '/api/comment' && req.method === 'GET') {
+                
+                try {
+                        const userCommentsFile = await fs.readFile(userCommentsPath)
+                        const parsedUserComments = JSON.parse(userCommentsFile)
+                        
+
+                        sendResponse(
+                                res,
+                                200,
+                                'application/json',
+                                JSON.stringify(parsedUserComments)
+                        )
+                }
+
+                catch(err) {
+                        console.log(err)
+                        sendResponse(
+                                res,
+                                500,
+                                'text/plain',
+                                JSON.stringify({error: 'Unable to get file'})
+                        )
+                }
+
+        }
+
+
+
         if (req.url === '/api/comment' && req.method === 'POST') {
 
                 
@@ -34,6 +64,7 @@ const server = http.createServer(async (req, res) => {
                         }
 
                         const parsedBody = JSON.parse(body)
+                        const {name, comment} = parsedBody
 
 
                         const userCommentsFile = await fs.readFile(userCommentsPath, 'utf8')
@@ -41,7 +72,7 @@ const server = http.createServer(async (req, res) => {
 
                         parsedUserCommentsFile.push(parsedBody)
 
-                        await fs.writeFile(userCommentsPath, JSON.stringify(parsedBody, null, 2), 'utf8')
+                        await fs.writeFile(userCommentsPath, JSON.stringify(parsedUserCommentsFile, null, 2), 'utf8')
 
                         return sendResponse(
                                 res,
@@ -63,14 +94,7 @@ const server = http.createServer(async (req, res) => {
                 }
 
 
-        } else {
-                sendResponse(
-                        res,
-                        404,
-                        'text/plain',
-                        JSON.stringify({message: 'url not found'})
-                )
-        }
+        } 
 
 
 
